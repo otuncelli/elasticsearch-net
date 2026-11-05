@@ -20,7 +20,7 @@ public sealed partial class MinimumShouldMatch : Union<int, string>
 
 	public static MinimumShouldMatch Fixed(int count) => count;
 
-	public static MinimumShouldMatch Percentage(double percentage) => $"{percentage}%";
+	public static MinimumShouldMatch Percentage(double percentage) => FormattableString.Invariant($"{percentage:0%}");
 
 	public static implicit operator MinimumShouldMatch(string first) => new(first);
 
